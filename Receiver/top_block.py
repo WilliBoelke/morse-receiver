@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Wed Jul 15 18:37:08 2020
+# Generated: Tue Jul 21 01:21:44 2020
 ##################################################
 
 if __name__ == '__main__':
@@ -29,6 +29,7 @@ from gnuradio.wxgui import forms
 from gnuradio.wxgui import scopesink2
 from grc_gnuradio import wxgui as grc_wxgui
 from optparse import OptionParser
+import epy_module_0  # embedded python module
 import osmosdr
 import time
 import wx
@@ -45,8 +46,8 @@ class top_block(grc_wxgui.top_block_gui):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 2000000
-        self.low_threshold_slider = low_threshold_slider = 6.15
-        self.high_threshold_slider = high_threshold_slider = 6.2
+        self.low_threshold_slider = low_threshold_slider = 6.1
+        self.high_threshold_slider = high_threshold_slider = 6.15
         self.down_rate = down_rate = 250000
 
         ##################################################
@@ -101,13 +102,13 @@ class top_block(grc_wxgui.top_block_gui):
         self.threshold_and_signal = scopesink2.scope_sink_f(
         	self.GetWin(),
         	title='Scope Plot',
-        	sample_rate=4,
+        	sample_rate=5,
         	v_scale=2,
         	v_offset=0,
         	t_scale=0,
         	ac_couple=False,
         	xy_mode=False,
-        	num_inputs=4,
+        	num_inputs=3,
         	trig_mode=wxgui.TRIG_MODE_AUTO,
         	y_axis_label='Counts',
         	size=(1000, 700),
@@ -116,7 +117,7 @@ class top_block(grc_wxgui.top_block_gui):
         self.threshold = scopesink2.scope_sink_f(
         	self.GetWin(),
         	title='Scope Plot',
-        	sample_rate=4,
+        	sample_rate=5,
         	v_scale=0,
         	v_offset=0,
         	t_scale=0,
@@ -127,8 +128,22 @@ class top_block(grc_wxgui.top_block_gui):
         	y_axis_label='Counts',
         )
         self.Add(self.threshold.win)
+        self.rtlsdr_source_0 = osmosdr.source( args="numchan=" + str(1) + " " + 'RTL2838UHIDIR' )
+        self.rtlsdr_source_0.set_clock_source('internal', 0)
+        self.rtlsdr_source_0.set_sample_rate(samp_rate)
+        self.rtlsdr_source_0.set_center_freq(446.7e6, 0)
+        self.rtlsdr_source_0.set_freq_corr(0, 0)
+        self.rtlsdr_source_0.set_dc_offset_mode(0, 0)
+        self.rtlsdr_source_0.set_iq_balance_mode(0, 0)
+        self.rtlsdr_source_0.set_gain_mode(False, 0)
+        self.rtlsdr_source_0.set_gain(100, 0)
+        self.rtlsdr_source_0.set_if_gain(20, 0)
+        self.rtlsdr_source_0.set_bb_gain(20, 0)
+        self.rtlsdr_source_0.set_antenna('', 0)
+        self.rtlsdr_source_0.set_bandwidth(12.5, 0)
+
         self.rational_resampler_xxx_0_0 = filter.rational_resampler_fff(
-                interpolation=4,
+                interpolation=5,
                 decimation=250,
                 taps=None,
                 fractional_bw=None,
@@ -139,19 +154,6 @@ class top_block(grc_wxgui.top_block_gui):
                 taps=None,
                 fractional_bw=None,
         )
-        self.osmosdr_source_0 = osmosdr.source( args="numchan=" + str(1) + " " + 'RTL2838UHIDIR' )
-        self.osmosdr_source_0.set_sample_rate(samp_rate)
-        self.osmosdr_source_0.set_center_freq(446.7e6, 0)
-        self.osmosdr_source_0.set_freq_corr(0, 0)
-        self.osmosdr_source_0.set_dc_offset_mode(2, 0)
-        self.osmosdr_source_0.set_iq_balance_mode(2, 0)
-        self.osmosdr_source_0.set_gain_mode(False, 0)
-        self.osmosdr_source_0.set_gain(15, 0)
-        self.osmosdr_source_0.set_if_gain(20, 0)
-        self.osmosdr_source_0.set_bb_gain(20, 0)
-        self.osmosdr_source_0.set_antenna('', 0)
-        self.osmosdr_source_0.set_bandwidth(0, 0)
-
         self.min_threshold_source = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, high_threshold_slider)
         self.max_threshold_source = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, low_threshold_slider)
         self.low_pass_filter_0 = filter.fir_filter_ccf(int(samp_rate/down_rate), firdes.low_pass(
@@ -159,7 +161,7 @@ class top_block(grc_wxgui.top_block_gui):
         self.blocks_threshold_ff_0 = blocks.threshold_ff(low_threshold_slider, high_threshold_slider, 0)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((5, ))
         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*1, '../Files/output', False)
-        self.blocks_file_sink_0.set_unbuffered(False)
+        self.blocks_file_sink_0.set_unbuffered(True)
         self.audio_sink_0 = audio.sink(24000, '', True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=down_rate,
@@ -172,23 +174,22 @@ class top_block(grc_wxgui.top_block_gui):
         self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0, 0))
         self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.blocks_threshold_ff_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.threshold_and_signal, 1))
+        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.threshold_and_signal, 0))
         self.connect((self.blocks_threshold_ff_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.blocks_threshold_ff_0, 0), (self.threshold, 0))
-        self.connect((self.blocks_threshold_ff_0, 0), (self.threshold_and_signal, 0))
         self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))
-        self.connect((self.max_threshold_source, 0), (self.threshold_and_signal, 3))
-        self.connect((self.min_threshold_source, 0), (self.threshold_and_signal, 2))
-        self.connect((self.osmosdr_source_0, 0), (self.low_pass_filter_0, 0))
+        self.connect((self.max_threshold_source, 0), (self.threshold_and_signal, 2))
+        self.connect((self.min_threshold_source, 0), (self.threshold_and_signal, 1))
         self.connect((self.rational_resampler_xxx_0, 0), (self.audio_sink_0, 0))
         self.connect((self.rational_resampler_xxx_0_0, 0), (self.blocks_multiply_const_vxx_0, 0))
+        self.connect((self.rtlsdr_source_0, 0), (self.low_pass_filter_0, 0))
 
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.osmosdr_source_0.set_sample_rate(self.samp_rate)
+        self.rtlsdr_source_0.set_sample_rate(self.samp_rate)
         self.low_pass_filter_0.set_taps(firdes.low_pass(2, self.samp_rate, 300e3, 10e3, firdes.WIN_HAMMING, 6.76))
 
     def get_low_threshold_slider(self):

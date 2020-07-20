@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 12)</value>
+      <value>(248, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>6.2</value>
+      <value>6.15</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -179,7 +179,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>6.15</value>
+      <value>6.1</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -238,7 +238,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(160, 12)</value>
+      <value>(168, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -277,7 +277,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(512, 572)</value>
+      <value>(448, 540)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -324,11 +324,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(736, 756)</value>
+      <value>(816, 716)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -375,7 +375,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(304, 292)</value>
+      <value>(464, 308)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -391,7 +391,7 @@
     </param>
     <param>
       <key>unbuffered</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>vlen</key>
@@ -422,7 +422,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 196)</value>
+      <value>(944, 300)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -469,7 +469,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 292)</value>
+      <value>(736, 356)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -524,7 +524,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 36)</value>
+      <value>(352, 36)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -571,7 +571,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(336, 532)</value>
+      <value>(280, 500)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -634,7 +634,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 116)</value>
+      <value>(944, 220)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -681,7 +681,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 156)</value>
+      <value>(944, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -705,7 +705,187 @@ os.chdir(script_path)</value>
     </param>
   </block>
   <block>
-    <key>osmosdr_source</key>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(248, 428)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_0</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value>Receive and Demod</value>
+    </param>
+  </block>
+  <block>
+    <key>note</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(752, 644)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>note_0_0</value>
+    </param>
+    <param>
+      <key>note</key>
+      <value>Audio Out </value>
+    </param>
+  </block>
+  <block>
+    <key>rational_resampler_xxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>decim</key>
+      <value>250</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>fbw</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(640, 692)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rational_resampler_xxx_0</value>
+    </param>
+    <param>
+      <key>interp</key>
+      <value>24</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>fff</value>
+    </param>
+  </block>
+  <block>
+    <key>rational_resampler_xxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>decim</key>
+      <value>250</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>fbw</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(672, 524)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rational_resampler_xxx_0_0</value>
+    </param>
+    <param>
+      <key>interp</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>fff</value>
+    </param>
+  </block>
+  <block>
+    <key>rtlsdr_source</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -720,11 +900,11 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>bw0</key>
-      <value>0</value>
+      <value>12.5</value>
     </param>
     <param>
       <key>dc_offset_mode0</key>
-      <value>2</value>
+      <value>0</value>
     </param>
     <param>
       <key>corr0</key>
@@ -744,11 +924,11 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>iq_balance_mode0</key>
-      <value>2</value>
+      <value>0</value>
     </param>
     <param>
       <key>gain0</key>
-      <value>15</value>
+      <value>100</value>
     </param>
     <param>
       <key>ant10</key>
@@ -2008,7 +2188,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(104, 512)</value>
+      <value>(56, 464)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2016,7 +2196,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>id</key>
-      <value>osmosdr_source_0</value>
+      <value>rtlsdr_source_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -2024,7 +2204,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>clock_source0</key>
-      <value></value>
+      <value>internal</value>
     </param>
     <param>
       <key>time_source0</key>
@@ -2112,124 +2292,6 @@ os.chdir(script_path)</value>
     </param>
   </block>
   <block>
-    <key>rational_resampler_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>decim</key>
-      <value>250</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>fbw</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(720, 628)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>rational_resampler_xxx_0</value>
-    </param>
-    <param>
-      <key>interp</key>
-      <value>24</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>fff</value>
-    </param>
-  </block>
-  <block>
-    <key>rational_resampler_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>decim</key>
-      <value>250</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>fbw</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(752, 516)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>rational_resampler_xxx_0_0</value>
-    </param>
-    <param>
-      <key>interp</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>fff</value>
-    </param>
-  </block>
-  <block>
     <key>wxgui_scopesink2</key>
     <param>
       <key>ac_couple</key>
@@ -2253,7 +2315,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 388)</value>
+      <value>(464, 388)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2277,7 +2339,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>samp_rate</key>
-      <value>4</value>
+      <value>5</value>
     </param>
     <param>
       <key>t_scale</key>
@@ -2340,7 +2402,7 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(304, 128)</value>
+      <value>(680, 196)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2360,11 +2422,11 @@ os.chdir(script_path)</value>
     </param>
     <param>
       <key>num_inputs</key>
-      <value>4</value>
+      <value>3</value>
     </param>
     <param>
       <key>samp_rate</key>
-      <value>4</value>
+      <value>5</value>
     </param>
     <param>
       <key>t_scale</key>
@@ -2425,7 +2487,7 @@ os.chdir(script_path)</value>
     <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
     <sink_block_id>threshold_and_signal</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_threshold_ff_0</source_block_id>
@@ -2440,12 +2502,6 @@ os.chdir(script_path)</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_threshold_ff_0</source_block_id>
-    <sink_block_id>threshold_and_signal</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>low_pass_filter_0</source_block_id>
     <sink_block_id>analog_wfm_rcv_0</sink_block_id>
     <source_key>0</source_key>
@@ -2455,19 +2511,13 @@ os.chdir(script_path)</value>
     <source_block_id>max_threshold_source</source_block_id>
     <sink_block_id>threshold_and_signal</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>3</sink_key>
+    <sink_key>2</sink_key>
   </connection>
   <connection>
     <source_block_id>min_threshold_source</source_block_id>
     <sink_block_id>threshold_and_signal</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>2</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>osmosdr_source_0</source_block_id>
-    <sink_block_id>low_pass_filter_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>rational_resampler_xxx_0</source_block_id>
@@ -2478,6 +2528,12 @@ os.chdir(script_path)</value>
   <connection>
     <source_block_id>rational_resampler_xxx_0_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>rtlsdr_source_0</source_block_id>
+    <sink_block_id>low_pass_filter_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
